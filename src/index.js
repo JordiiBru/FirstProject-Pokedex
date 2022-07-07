@@ -11,11 +11,8 @@ import { Button } from 'semantic-ui-react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   //<App />,
-   <div>
-    <Button primary>Primary</Button>
-    <Button secondary>Secondary</Button>
-  </div>
+   <App />,
+
 );
 
 
