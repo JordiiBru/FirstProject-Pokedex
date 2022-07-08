@@ -14,18 +14,10 @@ class App extends React.Component {
       name: "Jordi",
       author: "@jordi_bru"
     }
-    this.onChange = this.onChange.bind(this)
-  }
-
-  onChange(event, data){
-    console.log(data.value)
-    this.setState({
-      name: data.value
-    })
   }
 
   render() {
-    console.log(this.state)
+    //console.log(this.state)
     return (
       <div className="App">
         <PokedexHeader 
@@ -35,8 +27,7 @@ class App extends React.Component {
         <Segment basic>
           <Input 
             focus label='Input Form'
-            onChange={this.onChange}
-            value={this.state.name}
+            placeholder='Type...'
 
           />
         </Segment>
