@@ -7,10 +7,10 @@ import{
 
 const PokedexHeader = ( {author, name} ) => {
   return (
-    <Segment inverted padded='very' vertical>
-        <Header as='h1'>This is a header for {name}'s Pokedex!</Header>
-        <Image src={'ralts.png'} centered size='small'/>
-        <Header as='h3'>Author: {author}</Header>
+    <Segment padded='very' inverted vertical>
+        <Header as='h2'>This is a header for {name}'s Pokedex!</Header>
+        <Image src={'poke.png'} centered size='tiny'/>
+        <Header as='h3'>Author: {author} </Header>
     </Segment>
   )
 }

@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.App_header_dex {
+  text-align: center;
+}
+
+.Poke-container {
+  text-align: center;
+  
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

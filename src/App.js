@@ -2,6 +2,7 @@ import React from 'react';
 import PokedexHeader from './Components/PokedexHeader';
 import {
   Input,
+  Divider,
   Segment
 } from 'semantic-ui-react'
 import './App.css';
@@ -17,7 +18,6 @@ class App extends React.Component {
   }
 
   render() {
-    //console.log(this.state)
     return (
       <div className="App">
         <PokedexHeader 
@@ -28,9 +28,9 @@ class App extends React.Component {
           <Input 
             focus label='Input Form'
             placeholder='Type...'
-
           />
         </Segment>
+        <Divider />
       </div>
     );
   }
