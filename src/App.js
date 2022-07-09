@@ -1,5 +1,6 @@
 import React from 'react';
 import PokedexHeader from './Components/PokedexHeader';
+import PokemonInfo from './Components/PokemonInfo';
 import {
   Segment
 } from 'semantic-ui-react'
@@ -42,7 +43,15 @@ function App(){
         />
         <div className="pokemon-container">
           <div className="all-container">
-
+            {allPokemons.map((pokemon, index) => 
+              <PokemonInfo 
+              id={pokemon.id}
+              name={pokemon.name}
+              image={pokemon.sprites.other.dream_world.front_default}
+              type={pokemon.types[0].name}
+              key={index}
+              />
+            )}
           </div>
           <Segment basic>
             <button className="Load-More">Load More</button>
