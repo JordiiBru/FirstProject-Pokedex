@@ -16,7 +16,18 @@ function App(){
       const data = await res.json()
        
       setLoadMore(data.next)
-      console.log(data)
+      
+      function createPokemonObject(result)  {
+        result.forEach( async (pokemon) =>{
+          const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+          const data = await res.json()
+
+          setAllPokemons(currentList => [...currentList, data])
+          allPokemons.push(data)
+        })
+      }
+      createPokemonObject(data.results)
+      await console.log(allPokemons)
      }
    
     useEffect(() => {
