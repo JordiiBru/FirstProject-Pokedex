@@ -1,39 +1,45 @@
 import React from 'react';
 import PokedexHeader from './Components/PokedexHeader';
 import {
-  Input,
-  Divider,
   Segment
 } from 'semantic-ui-react'
 import './App.css';
+import { useEffect, useState } from "react"
 
+function App(){
 
-class App extends React.Component {
-  constructor(props){ //internal state (local)
-    super(props)
-    this.state = {
-      name: "Jordi",
-      author: "@jordi_bru"
-    }
-  }
+      const[allPokemons, setAllPokemons] = useState([])
+      const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
+   
+     const getAllPokemons = async () => {
+      const res = await fetch(loadMore)
+      const data = await res.json()
+       
+      setLoadMore(data.next)
+      console.log(data)
+     }
+   
+    useEffect(() => {
+     getAllPokemons()
+    }, [])
 
-  render() {
     return (
       <div className="App">
         <PokedexHeader 
-          author={this.state.author} 
-          name={this.state.name}
+          name='Jordi'
+          author='@jordi_bru'
         />
-        <Segment basic>
-          <Input 
-            focus label='Input Form'
-            placeholder='Type...'
-          />
-        </Segment>
-        <Divider />
+        <div className="pokemon-container">
+          <div className="all-container">
+
+          </div>
+          <Segment basic>
+            <button className="Load-More">Load More</button>
+          </Segment>
+          
+        </div>
       </div>
     );
-  }
 }
 
 export default App;
