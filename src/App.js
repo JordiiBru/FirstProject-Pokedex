@@ -25,6 +25,7 @@ function App(){
 
           setAllPokemons(currentList => [...currentList, data])
           allPokemons.push(data)
+          await allPokemons.sort((a, b) => a.id - b.id)
         })
       }
       createPokemonObject(data.results)
@@ -48,13 +49,13 @@ function App(){
               id={pokemon.id}
               name={pokemon.name}
               image={pokemon.sprites.other.dream_world.front_default}
-              type={pokemon.types[0].name}
+              type={pokemon.types[0].type.name}
               key={index}
               />
             )}
           </div>
           <Segment basic>
-            <button className="Load-More">Load More</button>
+            <button className="Load-More"onClick={() => getAllPokemons()}>Load More</button>
           </Segment>
           
         </div>

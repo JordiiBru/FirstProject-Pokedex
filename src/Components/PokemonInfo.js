@@ -1,8 +1,9 @@
 import React from 'react';
 
 const PokemonInfo = ( {id, name, image, type} ) => {
+    const style = `info-container ${type}`
     return (
-        <div className='info-container'>
+        <div className={style}>
             <div className='number'>
                 <small>#0{id}</small>
             </div>
